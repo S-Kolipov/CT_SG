@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="AllUiTests" verbose="2" parallel="methods" thread-count="1">
+
+    <listeners>
+        <listener class-name="utils.AllureTestngListener"/>
+        <listener class-name="listener.RetryListener"/>
+    </listeners>
+
+    <test name="FullSearch">
+        <classes>
+            <class name="ui.tests.FullSearchTest"/>
+        </classes>
+    </test>
+
+    <test name="Smoke">
+        <classes>
+            <class name="ui.tests.HomePageSmokeTest"/>
+        </classes>
+    </test>
+
+</suite>

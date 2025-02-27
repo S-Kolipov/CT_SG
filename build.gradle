@@ -1,0 +1,60 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.11.2'
+
+}
+
+group = 'uiTests'
+version = '1.0-SNAPSHOT'
+
+def allureVersion = '2.24.0'
+def webDriverManagerVersion = '5.6.2'
+def seleniumVersion = '4.10.0'
+
+
+repositories {
+
+    mavenCentral()
+}
+
+dependencies {
+
+
+    implementation "org.seleniumhq.selenium:selenium-java:$seleniumVersion"
+    implementation "io.github.bonigarcia:webdrivermanager:$webDriverManagerVersion"
+
+
+    testImplementation 'org.testng:testng:7.8.0'
+    testImplementation platform("io.qameta.allure:allure-bom:$allureVersion")
+    testImplementation "io.qameta.allure:allure-testng"
+    testImplementation 'org.slf4j:slf4j-simple:2.0.9'
+    testImplementation 'com.codeborne:selenide:6.12.0'
+}
+
+test {
+    useTestNG()
+
+    allure {
+        version = allureVersion
+        useTestNG {
+            version = allureVersion
+        }
+
+    }
+
+    systemProperties = System.getProperties()
+}
+
+test.finalizedBy() {
+    allureReport
+}
+
+tasks.register('copyAllureEnvironment', Copy) {
+    from "${projectDir}/src/test/resources/environment.properties"
+    into "${buildDir}/allure-results"
+}
+
+// Настройка задачи clean для удаления папки allure-results
+clean {
+    delete 'build/allure-results'
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SmokeTests" verbose="2" parallel="methods" thread-count="4">
+
+    <listeners>
+        <listener class-name="utils.AllureTestngListener"/>
+    </listeners>
+
+    <test name="Smoke">
+        <classes>
+            <class name="ui.tests.HomePageSmokeTest"/>
+        </classes>
+    </test>
+</suite>
