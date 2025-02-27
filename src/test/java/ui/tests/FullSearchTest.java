@@ -24,7 +24,7 @@ public class FullSearchTest extends TestBase {
 
     @Test(description = "Полнотекстовый поиск, проверка изменения запроса")
     @Description("Проверка изменения поискового запроса полнотекстового поиска на странице результатов")
-    @Severity(SeverityLevel.MINOR)
+    @Severity(SeverityLevel.NORMAL)
     public void fullSearchResultTest() {
         HomePage homePage = new HomePage();
         SearchPage searchPage = new SearchPage();
