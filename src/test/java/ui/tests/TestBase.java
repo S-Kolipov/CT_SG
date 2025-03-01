@@ -10,6 +10,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import ui.pages.PageManager;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -20,6 +21,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class TestBase {
 
+    protected static PageManager pages;
     protected static Properties properties;
 
     static {
@@ -29,6 +31,7 @@ public class TestBase {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
     @BeforeMethod

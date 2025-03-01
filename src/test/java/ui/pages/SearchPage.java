@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class SearchPage {
+public class SearchPage extends BasePage {
     private final SelenideElement searchCleanButton = $(".search__close");
     private final SelenideElement searchButton = $(".search__button");
     private final SelenideElement searchTitle = $(".search__title");

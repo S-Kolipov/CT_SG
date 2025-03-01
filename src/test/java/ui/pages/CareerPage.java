@@ -1,11 +1,9 @@
 package ui.pages;
 
 import com.codeborne.selenide.SelenideElement;
-
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class CareerPage {
+public class CareerPage extends BasePage {
 
     private static SelenideElement sendResumeButton = $x("//a[@class='intro-card__button page__button']");
     private static final SelenideElement feedbackForm = $x("//form[@class='r-feedback__form r-feedback-form']");

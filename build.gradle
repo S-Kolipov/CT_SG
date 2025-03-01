@@ -19,7 +19,6 @@ repositories {
 
 dependencies {
 
-
     implementation "org.seleniumhq.selenium:selenium-java:$seleniumVersion"
     implementation "io.github.bonigarcia:webdrivermanager:$webDriverManagerVersion"
 
