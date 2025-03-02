@@ -25,6 +25,8 @@ public class TestBase {
     protected static Properties properties;
 
     static {
+        pages = new PageManager();
+
         properties = new Properties();
         try (InputStream input = TestBase.class.getClassLoader().getResourceAsStream("local.properties")) {
             properties.load(input);

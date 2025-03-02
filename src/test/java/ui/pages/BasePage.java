@@ -2,8 +2,8 @@ package ui.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
+
+import static com.codeborne.selenide.Selenide.*;
 
 
 public class BasePage {
@@ -11,6 +11,7 @@ public class BasePage {
     private final SelenideElement searchButton = $(".r-header-search__open");
     private final SelenideElement searchField = $(".r-header-search__input");
     private final SelenideElement careerButton = $x("//a[@href='/career/']");
+    private final SelenideElement careerFooterButton = $x("//div[@class='footer-top__col']//a[@href='/career/']");
 
     public void searchItem(String item) {
         searchButton.click();
@@ -19,8 +20,18 @@ public class BasePage {
     }
 
     public void careerButtonClick() {
-        careerButton.shouldBe(Condition.visible)
+        careerButton
+                .scrollTo()
+                .shouldBe(Condition.visible)
                 .shouldBe(Condition.enabled)
                 .click();
     }
+
+    public void careerFooterButtonClick() {
+        careerFooterButton
+                .shouldBe(Condition.visible)
+                .shouldBe(Condition.enabled)
+                .click();
+    }
+
 }

@@ -1,10 +1,9 @@
 package ui.pages;
 
-
 public class PageManager {
-    private HomePage homePage;
-    private SearchPage searchPage;
-    private CareerPage careerPage;
+    private final HomePage homePage;
+    private final SearchPage searchPage;
+    private final CareerPage careerPage;
 
     public HomePage getHomePage() {
         return homePage;
@@ -16,5 +15,11 @@ public class PageManager {
 
     public CareerPage getCareerPage() {
         return careerPage;
+    }
+
+    public PageManager() {
+        this.homePage = new HomePage();
+        this.searchPage = new SearchPage();
+        this.careerPage = new CareerPage();
     }
 }

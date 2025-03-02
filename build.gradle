@@ -19,6 +19,9 @@ repositories {
 
 dependencies {
 
+    implementation 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
     implementation "org.seleniumhq.selenium:selenium-java:$seleniumVersion"
     implementation "io.github.bonigarcia:webdrivermanager:$webDriverManagerVersion"
 
